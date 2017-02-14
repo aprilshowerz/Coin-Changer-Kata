@@ -35,15 +35,15 @@ class Test_coin_changer < Minitest::Test
 		assert_equal({:penny => 1, :nickel => 1, :dime => 1}, coin_changer(16))
 	end
 
-	def test_2_cents_returns_2_pennies
-		assert_equal({:penny => 2}, coin_changer(1))
+	def test_21_cents_returns_2_dimes_and_1_penny
+		assert_equal({:penny => 1, :dime => 2}, coin_changer(21))
 	end
 
-	def test_2_cents_returns_2_pennies
-		assert_equal({:penny => 2}, coin_changer(1))
+	def test_25_cents_returns_1_quarter
+		assert_equal({:quarter => 1}, coin_changer(25))
 	end
 
-	def test_2_cents_returns_2_pennies
-		assert_equal({:penny => 2}, coin_changer(1))
+	def test_27_cents_returns_1_quarter_and_2_pennies
+		assert_equal({:penny => 2, :quarter => 1}, coin_changer(27))
 	end
 end
